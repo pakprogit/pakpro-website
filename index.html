@@ -2,98 +2,67 @@
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>PAKPRO Kenya | Your PRO of Choice!</title>
 <meta name="description" content="PAKPRO is Kenya's industry-led, not-for-profit producer responsibility organisation for post-consumer packaging.">
+<!-- CMS MAP: every element with data-field="..." is an editable field (hero video, headline, images, counters, cards). See README notes. -->
 <style>
-:root{--blue:#1474BB;--lime:#D4DF22;--navy:#0B2E4F;--ink:#12263A;--tint:#EEF4FA;--font:Aptos,"Segoe UI",Calibri,Arial,sans-serif}
+@font-face{font-family:Inter;font-weight:400;font-display:swap;src:url(assets/fonts/inter-latin-400-normal.woff2) format("woff2")}@font-face{font-family:Inter;font-weight:600;font-display:swap;src:url(assets/fonts/inter-latin-600-normal.woff2) format("woff2")}@font-face{font-family:Inter;font-weight:700;font-display:swap;src:url(assets/fonts/inter-latin-700-normal.woff2) format("woff2")}@font-face{font-family:Inter;font-weight:800;font-display:swap;src:url(assets/fonts/inter-latin-800-normal.woff2) format("woff2")}
+html{-webkit-text-size-adjust:100%}
+:root{--blue:#1474BB;--lime:#D4DF22;--navy:#0B2E4F;--ink:#12263A;--tint:#EEF4FA;--font:Inter,Aptos,"Segoe UI",Calibri,Arial,sans-serif}
 *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:var(--font);color:var(--ink);line-height:1.55;background:#fff}
 img{max-width:100%;height:auto}a{color:var(--blue)}:focus-visible{outline:3px solid var(--navy);outline-offset:2px}.dark :focus-visible{outline-color:var(--lime)}
 .skip{position:absolute;left:-999px}.skip:focus{left:8px;top:8px;background:#fff;padding:8px 12px;z-index:99}
-.wrap{max-width:1180px;margin:auto;padding:0 20px}section{padding:72px 0}h1,h2,h3,h4{line-height:1.15;margin:0 0 .5em;color:var(--navy)}
+.wrap{max-width:1180px;margin:auto;padding:0 20px}.wrap.wide{max-width:1400px}.hero .wrap>*{min-width:0}section{padding:72px 0}h1,h2,h3,h4{line-height:1.15;margin:0 0 .5em;color:var(--navy)}
 h2{font-size:clamp(1.7rem,3vw,2.3rem)}h2.hd{text-align:center;margin-bottom:40px}h2.hd:after{content:"";display:block;width:64px;height:5px;border-radius:3px;background:var(--lime);margin:14px auto 0}
 .btn{display:inline-block;padding:12px 24px;border-radius:999px;font-weight:700;text-decoration:none;border:2px solid transparent;cursor:pointer;font:inherit;font-weight:700}
 .btn-lime{background:var(--lime);color:var(--navy)}.btn-blue{background:var(--blue);color:#fff}.btn-line{border-color:#fff;color:#fff}.btn-navy{background:var(--navy);color:#fff}
 .topbar{background:var(--navy);color:#fff;font-size:.85rem;padding:6px 0}.topbar .wrap{display:flex;justify-content:space-between;gap:12px}.topbar a{color:var(--lime);text-decoration:none;font-weight:600}
 header{position:sticky;top:0;z-index:50;background:#fff;box-shadow:0 2px 12px rgba(11,46,79,.12)}header .wrap{display:flex;align-items:center;justify-content:space-between;height:76px;gap:16px}
-.brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--navy);font-weight:800;font-size:1.25rem}.brand img{height:50px;width:auto}
-nav ul{display:flex;gap:4px;list-style:none;margin:0;padding:0}nav a{display:block;padding:10px 12px;color:var(--navy);font-weight:600;text-decoration:none;border-radius:8px;font-size:.95rem}nav a:hover{background:var(--tint)}
-.hdr-cta{display:flex;gap:8px}.hdr-cta .btn{padding:9px 16px;font-size:.9rem}.menu-btn{display:none;background:var(--navy);color:#fff;border:0;border-radius:8px;padding:10px 14px;font:inherit;font-weight:700}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--navy);font-weight:800;font-size:1.25rem}.brand img{display:block;width:160px;height:auto;max-height:58px;object-fit:contain}
+nav ul{display:flex;gap:4px;list-style:none;margin:0;padding:0}nav a{display:block;white-space:nowrap;padding:10px 14px;color:var(--navy);font-weight:600;text-decoration:none;border-radius:8px;font-size:.95rem}nav a:hover{background:var(--tint)}
+.hdr-cta{display:flex;gap:8px;white-space:nowrap}.hdr-cta .btn{padding:9px 16px;font-size:.9rem}.menu-btn{display:none;background:var(--navy);color:#fff;border:0;border-radius:8px;padding:10px 14px;font:inherit;font-weight:700}
 .hero{position:relative;color:#fff;overflow:hidden;padding:0;background:linear-gradient(135deg,var(--navy),var(--blue));min-height:600px;display:flex;align-items:center}
 .hero video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}.hero:before{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(90deg,rgba(11,46,79,.93) 25%,rgba(11,46,79,.55))}
-.hero .wrap{position:relative;z-index:2;display:grid;grid-template-columns:1.15fr .85fr;gap:30px;align-items:center;padding-top:60px;padding-bottom:60px}.hero h1{color:#fff;font-size:clamp(2.4rem,5.5vw,4rem)}.hero h1 span{color:var(--lime)}
+.hero .wrap{position:relative;z-index:2;display:grid;grid-template-columns:1.3fr .7fr;gap:30px;align-items:center;padding-top:60px;padding-bottom:60px}.hero h1{color:#fff;font-size:clamp(2.2rem,4.4vw,3.7rem);text-wrap:balance}.hero h1 span{color:var(--lime)}
 .eyebrow{color:var(--lime);font-weight:700;letter-spacing:.12em;text-transform:uppercase;font-size:.85rem;margin-bottom:12px}.hero p{font-size:1.15rem;max-width:560px;margin:0 0 26px}.hero .btns{display:flex;gap:12px;flex-wrap:wrap}
-.disc{position:relative;width:min(380px,80vw);aspect-ratio:1;margin:auto;border-radius:50%;background:#fff;box-shadow:0 0 0 12px var(--lime);display:grid;place-items:end center}.disc img{height:118%;width:auto;margin-bottom:-6%}
+.shapes{position:absolute;inset:0;z-index:1;pointer-events:none;background:linear-gradient(112deg,transparent 56%,rgba(20,116,187,.6) 56%,rgba(20,116,187,.6) 80%,var(--lime) 80%,var(--lime) 84%,transparent 84%)}
+.rail{position:fixed;right:0;top:50%;transform:translateY(-50%);z-index:40;display:flex;flex-direction:column;background:var(--navy);border-radius:14px 0 0 14px;overflow:hidden;box-shadow:-4px 4px 16px rgba(0,0,0,.25)}.rail a{color:#fff;text-decoration:none;font-weight:700;font-size:.8rem;padding:16px 14px;text-align:center;border-bottom:1px solid rgba(255,255,255,.15)}.rail a:hover{background:var(--lime);color:var(--navy)}
+.disc{position:relative;width:min(380px,80vw);aspect-ratio:1;margin:auto;border-radius:50%;background:#fff;box-shadow:0 0 0 12px var(--lime);display:grid;place-items:center;overflow:hidden}.disc img{display:block;width:100%;height:100%;object-fit:contain;margin:0}
 .paths{padding:0;margin-top:-56px;position:relative;z-index:5}.paths .grid{display:grid;grid-template-columns:repeat(5,1fr);gap:16px}
 .path{background:#fff;border-radius:16px;padding:22px 18px;box-shadow:0 10px 30px rgba(11,46,79,.15);text-decoration:none;color:var(--ink);border-top:5px solid var(--lime);transition:transform .2s}.path:hover{transform:translateY(-4px)}
 .path b{display:inline-grid;place-items:center;width:38px;height:38px;border-radius:50%;background:var(--blue);color:#fff;margin-bottom:10px}.path h3{font-size:1.05rem}.path p{margin:0;font-size:.92rem;color:#3d5268}
 .prog{display:grid;grid-template-columns:1fr 2.1fr;gap:30px}.cats{background:var(--tint);border-radius:16px;padding:26px;align-self:start}.cats ul{list-style:none;padding:0;margin:0 0 20px}.cats li a{display:block;padding:10px 0;border-bottom:1px solid #d3e0ee;color:var(--navy);text-decoration:none;font-weight:600}
 .cards{display:grid;grid-template-columns:1fr 1fr;gap:22px}.card{background:#fff;border-radius:16px;overflow:hidden;box-shadow:0 6px 22px rgba(11,46,79,.12)}
-.card .thumb{background:var(--tint);height:180px;display:grid;place-items:end center;position:relative}.card .thumb img{height:92%;width:auto}.tag{position:absolute;left:14px;top:14px;background:var(--lime);color:var(--navy);font-weight:700;font-size:.78rem;padding:4px 12px;border-radius:999px}
+.card .thumb{background:#fff;height:180px;display:grid;place-items:end center;position:relative;overflow:hidden}.card .thumb img{height:92%;width:auto;object-fit:contain}.tag{position:absolute;left:14px;top:14px;background:var(--lime);color:var(--navy);font-weight:700;font-size:.78rem;padding:4px 12px;border-radius:999px}
 .card .body{padding:18px 20px 22px}.card h3{font-size:1.2rem}.card p{margin:0 0 10px;color:#3d5268;font-size:.95rem}.card a.more{font-weight:700;text-decoration:none}
 .join{background:var(--tint)}.join .g{display:grid;grid-template-columns:1fr 1fr;gap:36px;align-items:center}.panel{border-radius:16px;padding:28px;margin-bottom:20px}.panel.b{background:var(--blue);color:#fff}.panel.b h3{color:#fff}.panel.l{background:var(--lime);color:var(--navy)}
 .panel p{margin:0 0 16px}details{background:#fff;border-radius:12px;margin-bottom:10px;box-shadow:0 2px 10px rgba(11,46,79,.08)}summary{cursor:pointer;padding:16px 20px;font-weight:700;color:var(--navy);list-style:none;display:flex;justify-content:space-between}summary:after{content:"+";color:var(--blue);font-size:1.3rem;line-height:1}details[open] summary:after{content:"–"}details .in{padding:0 20px 18px}details ul{margin:0;padding-left:20px}
-.band{background:var(--lime);padding:44px 0}.band .wrap{display:flex;align-items:center;gap:30px;flex-wrap:wrap;justify-content:center}.band img{height:170px;width:auto}.band h2{margin-bottom:6px}.band p{margin:0 0 16px;color:var(--navy)}.band .btns{display:flex;gap:10px;flex-wrap:wrap}
+.band{background:var(--lime);padding:44px 0}.band .wrap{display:flex;align-items:center;gap:30px;flex-wrap:wrap;justify-content:center}.band img{height:170px;width:170px;object-fit:contain;border-radius:50%;background:#fff}.band h2{margin-bottom:6px}.band p{margin:0 0 16px;color:var(--navy)}.band .btns{display:flex;gap:10px;flex-wrap:wrap}
 .news{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}.news .card .thumb{border-bottom:3px dashed #b9cde2;font-size:.85rem;color:#5b7189;place-items:center}.date{font-size:.82rem;color:#5b7189;margin-bottom:4px}
 .impact{background:var(--navy);color:#fff}.impact h2{color:#fff}.impact .g{display:grid;grid-template-columns:1.3fr .7fr;gap:40px;align-items:center}.counts{display:grid;grid-template-columns:1fr 1fr;gap:18px}
-.count{background:rgba(255,255,255,.08);border-radius:16px;padding:22px;border-left:5px solid var(--lime)}.count .n{font-size:2.6rem;font-weight:800;color:var(--lime);line-height:1}.count .t{margin-top:6px}.story{text-align:center}.story img{height:230px;width:auto}.story .btn{margin-top:12px}
+.count{background:rgba(255,255,255,.08);border-radius:16px;padding:22px;border-left:5px solid var(--lime)}.count .n{font-size:2.6rem;font-weight:800;color:var(--lime);line-height:1}.count .t{margin-top:6px}.story{text-align:center}.story img{height:230px;width:230px;object-fit:contain;border-radius:50%;background:#fff}.story .btn{margin-top:12px}
 .contact .g{display:grid;grid-template-columns:2fr 1fr;gap:36px}form{display:grid;grid-template-columns:1fr 1fr;gap:14px}form .f{grid-column:span 2}label{font-weight:600;font-size:.9rem;display:block;margin-bottom:4px;color:var(--navy)}
-input,textarea{width:100%;padding:12px 14px;border:2px solid #c3d3e4;border-radius:10px;font:inherit}input:focus,textarea:focus{border-color:var(--blue);outline:none}.info{background:var(--tint);border-radius:16px;padding:26px;position:relative}.info h4{margin:14px 0 2px;font-size:.95rem}.info p{margin:0}.info img{height:150px;width:auto;display:block;margin:16px auto 0}
+input,textarea{width:100%;padding:12px 14px;border:2px solid #c3d3e4;border-radius:10px;font:inherit}input:focus,textarea:focus{border-color:var(--blue);outline:none}.info{background:var(--tint);border-radius:16px;padding:26px;position:relative}.info h4{margin:14px 0 2px;font-size:.95rem}.info p{margin:0}.info img{height:150px;width:150px;object-fit:contain;border-radius:50%;background:#fff;display:block;margin:16px auto 0}
 .todo{color:#8a5a00;background:#fff4d6;border-radius:6px;padding:1px 8px;font-size:.9rem}footer{background:#071f36;color:#cfdcea;padding:34px 0;font-size:.92rem}footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}footer a{color:#fff;margin-right:16px}footer b{color:var(--lime)}
-@media(max-width:1000px){.paths .grid{grid-template-columns:repeat(2,1fr)}.hero .wrap,.prog,.join .g,.impact .g,.contact .g{grid-template-columns:1fr}.hero .disc{display:none}.news{grid-template-columns:1fr}.menu-btn{display:block}.hdr-cta{display:none}
-nav{position:absolute;left:0;right:0;top:78px;background:#fff;box-shadow:0 10px 20px rgba(0,0,0,.1);display:none}nav.open{display:block}nav ul{flex-direction:column;padding:10px 20px}}
+@media(max-width:1100px){.shapes,.rail{display:none}.paths .grid{grid-template-columns:repeat(2,1fr)}.hero .wrap,.prog,.join .g,.impact .g,.contact .g{grid-template-columns:1fr}.hero .disc{display:grid;width:min(270px,72vw);margin:12px auto 0}.news{grid-template-columns:1fr}.menu-btn{display:block}.hdr-cta{display:none}
+nav{position:absolute;left:0;right:0;top:76px;background:#fff;box-shadow:0 10px 20px rgba(0,0,0,.1);display:none}nav.open{display:block}nav ul{flex-direction:column;padding:10px 20px}}
 @media(max-width:600px){.cards,.counts,form{grid-template-columns:1fr}form .f{grid-column:auto}.paths .grid{grid-template-columns:1fr}section{padding:52px 0}}
-@media(min-width:1001px) and (max-width:1200px){nav a{padding-left:8px;padding-right:8px;font-size:.88rem}.hdr-cta .btn{padding:8px 11px;font-size:.82rem}}
-@media(max-width:1000px){.hero{min-height:0}.hero .wrap{padding-top:76px;padding-bottom:58px}.hero .disc{display:grid;width:min(270px,66vw);margin:12px auto 0}.hero .disc img{width:100%;height:100%;object-fit:contain;margin:0}.hdr-cta{display:flex;margin-left:auto}.hdr-cta a:first-child{display:none}.hdr-cta .btn{padding:8px 14px}.menu-btn{padding:9px 12px}}
-@media(max-width:600px){.topbar .wrap{font-size:.76rem}.topbar .wrap span:first-child{max-width:70%;line-height:1.35}.wrap{padding-left:18px;padding-right:18px}.hero .wrap{padding-top:58px;padding-bottom:46px}.hero h1{font-size:clamp(2.35rem,11vw,3.2rem)}.hero p{font-size:1.02rem}.hero .disc{width:min(220px,62vw)}.hdr-cta .btn{padding:8px 11px;font-size:.8rem}header .wrap{gap:8px}.brand{gap:6px;font-size:1.05rem}.brand img{height:42px}}
 @media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
-section:not(.hero):not(.paths){scroll-margin-top:88px}
-.wrap{width:min(100%,1220px)}
-header .wrap{height:78px}
-.brand img{width:auto;object-fit:contain}
-.hero{min-height:620px}
-.hero:before{background:linear-gradient(90deg,rgba(11,46,79,.95) 0%,rgba(11,46,79,.78) 48%,rgba(11,46,79,.28) 100%)}
-.hero .wrap{grid-template-columns:minmax(0,1.1fr) minmax(280px,.9fr);gap:clamp(30px,6vw,78px)}
-.hero .disc{overflow:hidden;box-shadow:0 0 0 10px var(--lime),0 22px 54px rgba(0,0,0,.2)}
-.hero .disc img{width:100%;height:100%;object-fit:contain;margin:0}
-.paths{margin-top:-44px}
-.paths .grid{gap:14px}
-.path{height:100%;padding:22px 18px 24px;border-top-width:4px}
-.prog{grid-template-columns:minmax(220px,.78fr) minmax(0,2.22fr);gap:28px}
-.cats{position:sticky;top:104px}
-.cards{gap:20px}
-.card{height:100%;display:flex;flex-direction:column}
-.card .thumb{height:190px;overflow:hidden;background:#fff}
-.card .thumb img{height:100%;max-width:78%;object-fit:contain}
-.card .tag{z-index:1}
-.card .body{flex:1}
-.join .g{grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(28px,5vw,56px)}
-.panel{padding:30px;margin-bottom:16px}
-.panel:last-child{margin-bottom:0}
-.band .wrap{max-width:1040px;justify-content:space-between;gap:40px}
-.band img{height:190px}
-.band .wrap>div{flex:1;min-width:min(100%,440px)}
-.news{gap:24px}
-.news .card .thumb{height:170px;border-bottom:1px solid #dce5ee;background:var(--tint);border-radius:16px 16px 0 0}
-.impact .g{grid-template-columns:minmax(0,1.35fr) minmax(240px,.65fr)}
-.story img{height:250px;object-fit:contain}
-.contact .g{grid-template-columns:minmax(0,1.8fr) minmax(260px,.8fr);align-items:start}
-.info img{max-height:150px;object-fit:contain}
-footer .wrap{align-items:center}
-@media(max-width:1000px){.hero .wrap,.prog,.join .g,.impact .g,.contact .g{grid-template-columns:1fr}.hero .disc{display:grid}.cats{position:static}.band .wrap{justify-content:center;text-align:center}.band .wrap>div{flex:0 1 620px}.band .btns{justify-content:center}.impact .story{margin-top:10px}.news{grid-template-columns:repeat(2,minmax(0,1fr))}}
-@media(max-width:600px){.paths{margin-top:-28px}.paths .grid{gap:12px}.path{padding:18px}.cards{gap:16px}.card .thumb{height:175px}.join .g{gap:24px}.panel{padding:24px}.band{padding:34px 0}.band img{height:148px}.band .btns{display:grid;grid-template-columns:1fr;width:100%}.news{gap:16px}.counts{gap:12px}.count{padding:18px}.count .n{font-size:2.2rem}.contact .g{gap:24px}form{gap:12px}footer .wrap{align-items:flex-start}}
 </style></head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
-<div class="topbar dark"><div class="wrap"><span>Industry-led. Not-for-profit. Since 2018.</span><span><a href="#">Kiswahili</a></span></div></div>
-<header><div class="wrap">
-  <a class="brand" href="#top" data-field="site.logo"><img src="mascot_assets/pakpro-base.png" width="198" height="240" loading="eager" alt=""><span>PAKPRO</span></a>
+<div class="topbar dark"><div class="wrap wide"><span>Industry-led. Not-for-profit. Since 2018.</span><span><a href="https://epr.pakpro.co.ke">My PAKPRO login</a> &nbsp;|&nbsp; <a href="#">Kiswahili</a></span></div></div>
+<header><div class="wrap wide">
+  <a class="brand" href="#top" data-field="site.logo"><img src="logo/PAKPRO%20Logo_No%20background.png" width="800" height="320" loading="eager" alt="PAKPRO Packaging Producer Responsibility Organisation"></a>
   <nav id="nav" aria-label="Main"><ul>
     <li><a href="#about">About</a></li><li><a href="#epr">EPR &amp; Compliance</a></li><li><a href="#programmes">Programmes</a></li><li><a href="#recycling">Recycling</a></li><li><a href="#news">Media Centre</a></li><li><a href="#resources">Resources</a></li><li><a href="#contact">Contact</a></li></ul></nav>
-  <div class="hdr-cta"><a class="btn btn-line" style="border-color:var(--blue);color:var(--blue)" href="https://epr.pakpro.co.ke">My PAKPRO login</a><a class="btn btn-lime" href="https://epr.pakpro.co.ke">Join PAKPRO</a></div>
+  <div class="hdr-cta"><a class="btn btn-lime" href="https://epr.pakpro.co.ke">Join PAKPRO</a></div>
   <button class="menu-btn" aria-controls="nav" aria-expanded="false">Menu</button>
 </div></header>
 
 <main id="main">
-<section class="hero dark" id="top">
-  <video id="hero-video" data-field="hero.video" autoplay muted loop playsinline preload="metadata" aria-hidden="true"></video>
+<section class="hero dark" id="top" style="min-height:600px">
+  <!-- hero.video / hero.poster are editable in the CMS. Falls back to the brand gradient when no video is set. -->
+  <video id="hero-video" data-field="hero.video" autoplay muted loop playsinline preload="metadata" aria-hidden="true"><source src="assets/video/hero.mp4" type="video/mp4"></video>
+  <div class="shapes"></div>
   <div class="wrap">
     <div>
       <div class="eyebrow" data-field="hero.eyebrow">Packaging Producer Responsibility Organisation</div>
@@ -120,7 +89,7 @@ footer .wrap{align-items:center}
       <li><a href="#">Recovery and recycling</a></li><li><a href="#">Biz na Taka</a></li><li><a href="#">Adopt-a-Bin</a></li><li><a href="#">Tuwezeshe schools programme</a></li><li><a href="#">Community and river restoration</a></li><li><a href="#">Duara Circular Awards</a></li></ul>
       <a class="btn btn-blue" href="#">All programmes</a></aside>
     <div class="cards" data-field="programmes.cards">
-      <article class="card"><div class="thumb"><span class="tag">Waste value chain</span><img src="mascot_assets/pakpro-14-carrying-waste.png" width="277" height="500" loading="lazy" alt=""></div><div class="body"><h3>Biz na Taka</h3><p>Building the waste value chain and agent network that moves packaging from collection to recycling.</p><a class="more" href="#">Learn more →</a></div></article>
+      <article class="card"><div class="thumb"><span class="tag">Waste value chain</span><img src="Biz-na-Taka logo NEW.png" width="277" height="500" loading="lazy" alt=""></div><div class="body"><h3>Biz na Taka</h3><p>Building the waste value chain and agent network that moves packaging from collection to recycling.</p><a class="more" href="#">Learn more →</a></div></article>
       <article class="card"><div class="thumb"><span class="tag">Institutions &amp; communities</span><img src="mascot_assets/pakpro-13-recycling-item.png" width="271" height="500" loading="lazy" alt=""></div><div class="body"><h3>Adopt-a-Bin</h3><p>Segregated bins placed in institutions and communities, sponsored by partners.</p><a class="more" href="#">Learn more →</a></div></article>
       <article class="card"><div class="thumb"><span class="tag">Schools</span><img src="mascot_assets/pakpro-04-teaching.png" width="309" height="500" loading="lazy" alt=""></div><div class="body"><h3>Tuwezeshe</h3><p>Our schools programme with the Kenya Scouts Association, teaching learners to separate and recycle.</p><a class="more" href="#">Learn more →</a></div></article>
       <article class="card"><div class="thumb"><span class="tag">Awards</span><img src="mascot_assets/pakpro-03-champion.png" width="329" height="500" loading="lazy" alt=""></div><div class="body"><h3>Duara Circular Awards</h3><p>Celebrating organisations and people who lead on circularity in Kenya.</p><a class="more" href="#">Learn more →</a></div></article>
@@ -166,6 +135,7 @@ footer .wrap{align-items:center}
 
 <section class="contact" id="contact"><div class="wrap g">
   <div><h2>Let's get in touch</h2>
+  <!-- Connect this form to the backend / forms plugin with spam protection. Not wired in this prototype. -->
   <form action="#" method="post">
     <div><label for="n">Your name</label><input id="n" name="name" required></div><div><label for="e">Email</label><input id="e" name="email" type="email" required></div>
     <div class="f"><label for="s">Subject</label><input id="s" name="subject" required></div><div class="f"><label for="m">Message</label><textarea id="m" name="message" rows="5" required></textarea></div>
@@ -177,6 +147,7 @@ footer .wrap{align-items:center}
 
 <footer><div class="wrap"><div><b>PAKPRO</b> — Your PRO of Choice!<br>© <span id="yr">2026</span> Packaging Producer Responsibility Organisation.</div>
 <div><a href="https://www.nema.go.ke">NEMA</a><a href="#">Privacy policy</a><a href="#">Terms</a><a href="#">Disclaimer</a></div></div></footer>
+<aside class="rail" aria-label="Quick actions"><a href="https://epr.pakpro.co.ke">Join</a><a href="#recycling">Prices</a><a href="#recycling">Bins</a><a href="#contact">Chat</a></aside>
 
 <script>
 // Hero video: skip on small screens, data-saver and reduced motion. Poster/gradient shows instead.
