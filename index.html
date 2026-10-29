@@ -37,6 +37,7 @@ nav ul{display:flex;gap:4px;list-style:none;margin:0;padding:0}nav a{display:blo
 .panel p{margin:0 0 16px}details{background:#fff;border-radius:12px;margin-bottom:10px;box-shadow:0 2px 10px rgba(11,46,79,.08)}summary{cursor:pointer;padding:16px 20px;font-weight:700;color:var(--navy);list-style:none;display:flex;justify-content:space-between}summary:after{content:"+";color:var(--blue);font-size:1.3rem;line-height:1}details[open] summary:after{content:"–"}details .in{padding:0 20px 18px}details ul{margin:0;padding-left:20px}
 .band{background:var(--lime);padding:44px 0}.band .wrap{display:flex;align-items:center;gap:30px;flex-wrap:wrap;justify-content:center}.band img{height:170px;width:170px;object-fit:contain;border-radius:50%;background:#fff}.band h2{margin-bottom:6px}.band p{margin:0 0 16px;color:var(--navy)}.band .btns{display:flex;gap:10px;flex-wrap:wrap}
 .news{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}.news .card .thumb{border-bottom:3px dashed #b9cde2;font-size:.85rem;color:#5b7189;place-items:center}.date{font-size:.82rem;color:#5b7189;margin-bottom:4px}
+.events-section{--event-accent:#80384b;--event-ink:#321824}.events-section h2.hd:after{background:var(--event-accent)}.events-intro{text-align:center;color:#5b7189;margin:-22px auto 44px;max-width:760px}.events-filters{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;max-width:860px;margin:0 auto 24px}.events-filters label{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}.events-filters select{width:100%;min-height:50px;border:1px solid #d5d5d5;border-radius:9px;padding:0 16px;background:#fff;color:var(--ink);font:inherit}.events-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px 20px}.event-card{min-height:244px;display:grid;grid-template-columns:100px minmax(0,1fr);overflow:hidden;border-radius:12px;background:#fff;box-shadow:0 6px 20px rgba(26,21,24,.08)}.event-date{display:flex;flex-direction:column;justify-content:center;align-items:center;padding:18px 8px;background:var(--event-accent);color:#fff;text-align:center}.event-date .month{font-size:.9rem;font-weight:700;text-transform:uppercase}.event-date .day{font-size:2rem;font-weight:800;line-height:1.25}.event-date .year{font-size:.88rem;font-weight:600}.event-body{min-width:0;padding:24px;display:flex;flex-direction:column;align-items:flex-start}.event-category{display:inline-block;margin-bottom:12px;padding:5px 13px;border-radius:999px;background:#e6f3ff;color:#075ca5;font-size:.76rem;font-weight:700;text-transform:uppercase}.event-category[data-category="Sports"]{background:#e8f4e9;color:#168137}.event-category[data-category="Arts"]{background:#ffebef;color:#c0263b}.event-category[data-category="Community"]{background:#fff2df;color:#c65310}.event-card h3{margin:0 0 8px;color:var(--event-ink);font-size:1.2rem}.event-card p{margin:0 0 14px;color:#5b7189;font-size:.94rem}.event-details{display:flex;flex-wrap:wrap;gap:8px 18px;margin-top:auto;color:#687588;font-size:.84rem}.event-actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}.event-actions a{display:inline-flex;align-items:center;justify-content:center;min-height:42px;padding:8px 18px;border:1px solid var(--event-accent);border-radius:999px;color:var(--event-accent);font-weight:700;text-decoration:none}.event-actions .event-learn{background:var(--event-accent);color:#fff}.event-actions a:hover{filter:brightness(.92)}.events-empty{grid-column:1/-1;padding:26px;border-radius:12px;background:#f7f8fa;color:#5b7189;text-align:center}.events-home{padding-top:48px}.events-home .events-grid{margin-bottom:26px}.events-home .events-more{display:block;width:max-content;margin:0 auto;border:1px solid var(--event-accent);border-radius:999px;padding:10px 20px;color:var(--event-accent);font-weight:700;text-decoration:none}.events-home .events-filters{display:none}
 .impact{background:var(--navy);color:#fff}.impact h2{color:#fff}.impact .g{display:grid;grid-template-columns:1.3fr .7fr;gap:40px;align-items:center}.counts{display:grid;grid-template-columns:1fr 1fr;gap:18px}
 .count{background:rgba(255,255,255,.08);border-radius:16px;padding:22px;border-left:5px solid var(--lime)}.count .n{font-size:2.6rem;font-weight:800;color:var(--lime);line-height:1}.count .t{margin-top:6px}.story{text-align:center}.story img{height:230px;width:230px;object-fit:contain;border-radius:50%;background:#fff}.story .btn{margin-top:12px}
 .contact .g{display:grid;grid-template-columns:2fr 1fr;gap:36px}form{display:grid;grid-template-columns:1fr 1fr;gap:14px}form .f{grid-column:span 2}label{font-weight:600;font-size:.9rem;display:block;margin-bottom:4px;color:var(--navy)}
@@ -45,6 +46,8 @@ input,textarea{width:100%;padding:12px 14px;border:2px solid #c3d3e4;border-radi
 @media(max-width:1100px){.shapes,.rail{display:none}.paths .grid{grid-template-columns:repeat(2,1fr)}.hero .wrap,.prog,.join .g,.impact .g,.contact .g{grid-template-columns:1fr}.hero .disc{display:grid;width:min(270px,72vw);margin:12px auto 0}.news{grid-template-columns:1fr}.menu-btn{display:block}.hdr-cta{display:none}
 nav{position:absolute;left:0;right:0;top:76px;background:#fff;box-shadow:0 10px 20px rgba(0,0,0,.1);display:none}nav.open{display:block}nav ul{flex-direction:column;padding:10px 20px}}
 @media(max-width:600px){.cards,.counts,form{grid-template-columns:1fr}form .f{grid-column:auto}.paths .grid{grid-template-columns:1fr}section{padding:52px 0}}
+@media(max-width:760px){.events-filters{grid-template-columns:1fr;margin-bottom:20px}.events-grid{grid-template-columns:1fr;gap:16px}.events-intro{margin-bottom:28px}.event-card{grid-template-columns:78px minmax(0,1fr);min-height:0}.event-body{padding:18px 16px}.event-date .day{font-size:1.75rem}.event-actions a{padding:8px 14px}.events-home{padding-top:34px}}
+@media(max-width:420px){.event-card{grid-template-columns:68px minmax(0,1fr)}.event-body{padding:16px 13px}.event-actions{gap:8px}.event-actions a{min-height:40px;padding:7px 11px;font-size:.88rem}}
 @media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
 </style></head>
 <body>
@@ -53,7 +56,7 @@ nav{position:absolute;left:0;right:0;top:76px;background:#fff;box-shadow:0 10px 
 <header><div class="wrap wide">
   <a class="brand" href="#top" data-field="site.logo"><img src="logo/PAKPRO%20Logo_No%20background.png" width="800" height="320" loading="eager" alt="PAKPRO Packaging Producer Responsibility Organisation"></a>
   <nav id="nav" aria-label="Main"><ul>
-    <li><a href="#about">About</a></li><li><a href="#epr">EPR &amp; Compliance</a></li><li><a href="#programmes">Programmes</a></li><li><a href="#recycling">Recycling</a></li><li><a href="#news">Media Centre</a></li><li><a href="#resources">Resources</a></li><li><a href="#contact">Contact</a></li></ul></nav>
+    <li><a href="#about">About</a></li><li><a href="#epr">EPR &amp; Compliance</a></li><li><a href="#programmes">Programmes</a></li><li><a href="#events">Events</a></li><li><a href="#recycling">Recycling</a></li><li><a href="#news">Media Centre</a></li><li><a href="#resources">Resources</a></li><li><a href="#contact">Contact</a></li></ul></nav>
   <div class="hdr-cta"><a class="btn btn-lime" href="https://epr.pakpro.co.ke">Join PAKPRO</a></div>
   <button class="menu-btn" aria-controls="nav" aria-expanded="false">Menu</button>
 </div></header>
@@ -97,6 +100,13 @@ nav{position:absolute;left:0;right:0;top:76px;background:#fff;box-shadow:0 10px 
   </div>
 </div></section>
 
+<section class="events-section events-home" id="events-home"><div class="wrap">
+  <h2 class="hd">Events</h2>
+  <p class="events-intro">Discover upcoming PAKPRO events, workshops and community activities.</p>
+  <div class="events-grid" id="home-events-list" aria-live="polite"></div>
+  <a class="events-more" href="#events">View all events</a>
+</div></section>
+
 <section class="join" id="about"><div class="wrap g">
   <div>
     <div class="panel b"><h3>Are you a producer?</h3><p>Companies placing packaging on the Kenyan market, including SMEs and online sellers, may need to comply with the EPR Regulations, 2024.</p><a class="btn btn-lime" href="https://epr.pakpro.co.ke">Join PAKPRO</a></div>
@@ -122,6 +132,18 @@ nav{position:absolute;left:0;right:0;top:76px;background:#fff;box-shadow:0 10px 
     <article class="card"><div class="thumb">Image from the CMS</div><div class="body"><div class="date">Date</div><h3>News headline</h3><p>Short summary pulled automatically from the latest news posts.</p><a class="more" href="#">Read more →</a></div></article>
     <article class="card"><div class="thumb">Image from the CMS</div><div class="body"><div class="date">Date</div><h3>News headline</h3><p>Short summary pulled automatically from the latest news posts.</p><a class="more" href="#">Read more →</a></div></article>
   </div>
+</div></section>
+
+<section class="events-section" id="events"><div class="wrap">
+  <h2 class="hd">Events</h2>
+  <p class="events-intro">Discover upcoming PAKPRO events, workshops and community activities.</p>
+  <div class="events-filters">
+    <label for="events-month">Filter by month</label>
+    <select id="events-month"><option value="all">All Months</option></select>
+    <label for="events-category">Filter by category</label>
+    <select id="events-category"><option value="all">All Categories</option></select>
+  </div>
+  <div class="events-grid" id="events-list" aria-live="polite"></div>
 </div></section>
 
 <section class="impact dark" id="resources"><div class="wrap g">
@@ -150,6 +172,169 @@ nav{position:absolute;left:0;right:0;top:76px;background:#fff;box-shadow:0 10px 
 <aside class="rail" aria-label="Quick actions"><a href="https://epr.pakpro.co.ke">Join</a><a href="#recycling">Prices</a><a href="#recycling">Bins</a><a href="#contact">Chat</a></aside>
 
 <script>
+// Add records here: { title, date: "YYYY-MM-DD", category, description, startTime: "HH:MM", endTime: "HH:MM", location, url }.
+var eventsData = [];
+
+function eventDate(date) {
+  return new Date(date + "T00:00:00");
+}
+
+function eventCalendarUrl(event) {
+  var parts = event.date.split("-").map(Number);
+  var start, end;
+  if (event.startTime && event.endTime) {
+    var startParts = event.startTime.split(":").map(Number);
+    var endParts = event.endTime.split(":").map(Number);
+    start = new Date(Date.UTC(parts[0], parts[1] - 1, parts[2], startParts[0] - 3, startParts[1]));
+    end = new Date(Date.UTC(parts[0], parts[1] - 1, parts[2], endParts[0] - 3, endParts[1]));
+    start = start.toISOString().replace(/[-:]/g, "").replace(".000", "");
+    end = end.toISOString().replace(/[-:]/g, "").replace(".000", "");
+  } else {
+    start = event.date.replace(/-/g, "");
+    var nextDay = eventDate(event.date);
+    nextDay.setDate(nextDay.getDate() + 1);
+    end = nextDay.getFullYear() + ("0" + (nextDay.getMonth() + 1)).slice(-2) + ("0" + nextDay.getDate()).slice(-2);
+  }
+  var query = new URLSearchParams({
+    action: "TEMPLATE",
+    text: event.title,
+    dates: start + "/" + end,
+    details: event.description,
+    location: event.location || "",
+    ctz: "Africa/Nairobi"
+  });
+  return "https://calendar.google.com/calendar/render?" + query.toString();
+}
+
+function createEventCard(event) {
+  var date = eventDate(event.date);
+  var card = document.createElement("article");
+  card.className = "event-card";
+
+  var dateColumn = document.createElement("div");
+  dateColumn.className = "event-date";
+  dateColumn.setAttribute("aria-label", date.toLocaleDateString("en-GB", { day: "numeric", month: "long", year: "numeric" }));
+  [["month", date.toLocaleDateString("en-GB", { month: "short" })],
+    ["day", date.toLocaleDateString("en-GB", { day: "numeric" })],
+    ["year", date.getFullYear()]].forEach(function(item) {
+    var part = document.createElement("span");
+    part.className = item[0];
+    part.textContent = item[1];
+    dateColumn.appendChild(part);
+  });
+  card.appendChild(dateColumn);
+
+  var body = document.createElement("div");
+  body.className = "event-body";
+  var category = document.createElement("span");
+  category.className = "event-category";
+  category.dataset.category = event.category;
+  category.textContent = event.category;
+  body.appendChild(category);
+
+  var title = document.createElement("h3");
+  title.textContent = event.title;
+  body.appendChild(title);
+  var description = document.createElement("p");
+  description.textContent = event.description;
+  body.appendChild(description);
+
+  var details = document.createElement("div");
+  details.className = "event-details";
+  if (event.startTime && event.endTime) {
+    var time = document.createElement("span");
+    time.textContent = "\u25f7 " + event.startTime + " - " + event.endTime;
+    details.appendChild(time);
+  }
+  if (event.location) {
+    var location = document.createElement("span");
+    location.textContent = "\u2316 " + event.location;
+    details.appendChild(location);
+  }
+  if (details.childNodes.length) body.appendChild(details);
+
+  var actions = document.createElement("div");
+  actions.className = "event-actions";
+  var learnMore = document.createElement("a");
+  learnMore.className = "event-learn";
+  learnMore.href = event.url || "#contact";
+  learnMore.textContent = "Learn More";
+  actions.appendChild(learnMore);
+  var addCalendar = document.createElement("a");
+  addCalendar.href = eventCalendarUrl(event);
+  addCalendar.target = "_blank";
+  addCalendar.rel = "noopener noreferrer";
+  addCalendar.textContent = "+ Add to Calendar";
+  actions.appendChild(addCalendar);
+  body.appendChild(actions);
+  card.appendChild(body);
+  return card;
+}
+
+function renderEventList(container, events) {
+  container.replaceChildren();
+  if (!events.length) {
+    var empty = document.createElement("p");
+    empty.className = "events-empty";
+    empty.textContent = "No events have been added yet. Please check back soon.";
+    container.appendChild(empty);
+    return;
+  }
+  events.forEach(function(event) {
+    container.appendChild(createEventCard(event));
+  });
+}
+
+function initializeEvents() {
+  var monthFilter = document.getElementById("events-month");
+  var categoryFilter = document.getElementById("events-category");
+  var events = eventsData.slice().sort(function(a, b) {
+    return eventDate(a.date) - eventDate(b.date);
+  });
+
+  while (monthFilter.options.length > 1) monthFilter.remove(1);
+  while (categoryFilter.options.length > 1) categoryFilter.remove(1);
+
+  var months = {};
+  var categories = {};
+  events.forEach(function(event) {
+    var date = eventDate(event.date);
+    var monthKey = event.date.slice(0, 7);
+    months[monthKey] = date.toLocaleDateString("en-GB", { month: "long", year: "numeric" });
+    categories[event.category] = true;
+  });
+
+  Object.keys(months).sort().forEach(function(key) {
+    var option = document.createElement("option");
+    option.value = key;
+    option.textContent = months[key];
+    monthFilter.appendChild(option);
+  });
+  Object.keys(categories).sort().forEach(function(value) {
+    var option = document.createElement("option");
+    option.value = value;
+    option.textContent = value;
+    categoryFilter.appendChild(option);
+  });
+
+  function updateEvents() {
+    var month = monthFilter.value;
+    var category = categoryFilter.value;
+    var filtered = events.filter(function(event) {
+      return (month === "all" || event.date.slice(0, 7) === month) &&
+        (category === "all" || event.category === category);
+    });
+    renderEventList(document.getElementById("events-list"), filtered);
+    renderEventList(document.getElementById("home-events-list"), events.slice(0, 2));
+  }
+
+  monthFilter.addEventListener("change", updateEvents);
+  categoryFilter.addEventListener("change", updateEvents);
+  updateEvents();
+}
+
+initializeEvents();
+
 // Hero video: skip on small screens, data-saver and reduced motion. Poster/gradient shows instead.
 (function(){var v=document.getElementById("hero-video"),c=navigator.connection||{};
  if(v&&(matchMedia("(max-width:768px)").matches||c.saveData||matchMedia("(prefers-reduced-motion:reduce)").matches))v.remove();
