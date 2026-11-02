@@ -30,6 +30,46 @@ h2{font-size:clamp(1.7rem,3vw,2.3rem)}h2.hd{text-align:center;margin-bottom:40px
 .marquee-track.paused{animation-play-state:paused}
 @keyframes marquee-scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 @media(prefers-reduced-motion:reduce){.marquee-track{animation:none!important}.marquee-group+.marquee-group{display:none}.marquee-dot{display:none}.marquee-item~.marquee-item{display:none}.marquee-toggle{display:none}}
+.price-ticker{background:var(--navy);color:#fff;border-bottom:3px solid var(--lime);padding:10px 0}
+.price-ticker .wrap.wide{display:flex;align-items:center;gap:14px;min-height:44px}
+.price-ticker .btn{padding:8px 14px;font-size:.85rem;flex:0 0 auto;white-space:nowrap}
+.ticker{display:flex;align-items:center;gap:8px;flex:1 1 auto;min-width:0;line-height:1.4}
+.ticker-viewport{overflow:hidden;flex:1 1 auto;min-width:0}
+.ticker-track{display:flex;white-space:nowrap;width:max-content;animation:ticker-scroll 50s linear infinite;will-change:transform}
+.ticker-group{display:inline-flex;align-items:center;white-space:nowrap;flex:0 0 auto}
+.ticker-item{flex:0 0 auto}
+.ticker-dot{flex:0 0 auto;color:var(--lime);margin:0 14px;font-weight:700}
+.ticker-toggle{flex:0 0 auto;display:inline-flex;align-items:center;justify-content:center;width:22px;height:20px;background:rgba(255,255,255,.14);color:#fff;border:0;border-radius:6px;cursor:pointer;padding:0;font:inherit}
+.ticker-toggle:hover{background:rgba(255,255,255,.26)}
+.ticker-icon--play{display:none}
+.ticker-toggle.is-paused .ticker-icon--pause{display:none}
+.ticker-toggle.is-paused .ticker-icon--play{display:inline}
+.ticker:hover .ticker-track,.ticker:focus-within .ticker-track{animation-play-state:paused}
+.ticker-track.paused{animation-play-state:paused}
+@keyframes ticker-scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@media(prefers-reduced-motion:reduce){.ticker-track{animation:none!important}.ticker-group+.ticker-group{display:none}.ticker-dot{display:none}.ticker-item~.ticker-item{display:none}.ticker-toggle{display:none}}
+#prices{background:var(--tint)}
+#prices .wrap{max-width:1180px}
+.prices-head{display:flex;align-items:baseline;flex-wrap:wrap;gap:8px 16px;margin-bottom:6px}
+.prices-head h2{margin:0}
+.prices-sub{margin:0 0 14px;color:#3d5268;font-weight:600}
+.price-updated{margin:0 0 18px}
+.price-updated .todo{font-weight:700}
+.price-search{margin-bottom:18px;max-width:360px}
+.price-search label{display:block;font-weight:600;font-size:.9rem;margin-bottom:5px;color:var(--navy)}
+#price-filter{width:100%;padding:11px 14px;border:2px solid #c3d3e4;border-radius:10px;font:inherit;background:#fff}
+#price-filter:focus{border-color:var(--blue);outline:none;box-shadow:0 0 0 3px rgba(20,116,187,.18)}
+.prices-table-wrap{border-radius:14px;overflow:hidden;box-shadow:0 6px 22px rgba(11,46,79,.10);background:#fff;border:1px solid #e2eaf3}
+table.prices{width:100%;border-collapse:collapse;font-size:.96rem}
+table.prices caption{padding:12px 16px;text-align:left;font-weight:600;color:#3d5268;font-size:.9rem}
+table.prices th,table.prices td{padding:13px 16px;text-align:left;border-bottom:1px solid #e2eaf3}
+table.prices thead th{background:#eaf1f8;color:var(--navy);font-weight:700;font-size:.88rem;white-space:nowrap}
+table.prices tbody tr:last-child td{border-bottom:0}
+table.prices tbody td:first-child{font-weight:600;color:var(--navy)}
+table.prices tbody tr:hover{background:#f4f8fc}
+.no-results{margin-top:14px;padding:18px;color:#5b7189;background:#fff;border:1px solid #e2eaf3;border-radius:10px;text-align:center}
+.prices-footnote{margin:16px 0 0;font-size:.88rem;color:#5b7189}
+@media(max-width:700px){.prices-table-wrap{border-radius:12px;overflow:visible;box-shadow:none;border:0;background:transparent}table.prices thead{display:none}table.prices tbody,table.prices tr,table.prices td{display:block;width:100%}table.prices tbody tr{margin:0 0 14px;padding:14px 16px;border:1px solid #d3e0ee;border-radius:12px;background:#fff;box-shadow:0 4px 14px rgba(11,46,79,.08)}table.prices tbody td{padding:5px 0;border:0}table.prices tbody td:first-child{font-weight:700;font-size:1.05rem;padding-bottom:8px;margin-bottom:4px;border-bottom:1px solid #eef4fa}table.prices tbody td:not(:first-child):before{content:attr(data-label) ": ";font-weight:700;color:var(--navy)}}
 header{position:sticky;top:0;z-index:50;background:#fff;box-shadow:0 2px 12px rgba(11,46,79,.12)}header .wrap{display:flex;align-items:center;justify-content:space-between;height:76px;gap:16px}
 .brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--navy);font-weight:800;font-size:1.25rem}.brand img{display:block;width:160px;height:auto;max-height:58px;object-fit:contain}
 nav ul{display:flex;gap:4px;list-style:none;margin:0;padding:0}nav a{display:block;white-space:nowrap;padding:10px 14px;color:var(--navy);font-weight:600;text-decoration:none;border-radius:8px;font-size:.95rem}nav a:hover{background:var(--tint)}
@@ -41,7 +81,7 @@ nav ul{display:flex;gap:4px;list-style:none;margin:0;padding:0}nav a{display:blo
 .shapes{position:absolute;inset:0;z-index:1;pointer-events:none;background:linear-gradient(112deg,transparent 56%,rgba(20,116,187,.6) 56%,rgba(20,116,187,.6) 80%,var(--lime) 80%,var(--lime) 84%,transparent 84%)}
 .rail{position:fixed;right:0;top:50%;transform:translateY(-50%);z-index:40;display:flex;flex-direction:column;background:var(--navy);border-radius:14px 0 0 14px;overflow:hidden;box-shadow:-4px 4px 16px rgba(0,0,0,.25)}.rail a{color:#fff;text-decoration:none;font-weight:700;font-size:.8rem;padding:16px 14px;text-align:center;border-bottom:1px solid rgba(255,255,255,.15)}.rail a:hover{background:var(--lime);color:var(--navy)}
 .disc{position:relative;width:min(380px,80vw);aspect-ratio:1;margin:auto;border-radius:50%;background:#fff;box-shadow:0 0 0 12px var(--lime);display:grid;place-items:center;overflow:hidden}.disc img{display:block;width:100%;height:100%;object-fit:contain;margin:0}
-.paths{padding:0;margin-top:-56px;position:relative;z-index:5}.paths .grid{display:grid;grid-template-columns:repeat(5,1fr);gap:16px}
+.paths{padding:0;margin-top:0;position:relative;z-index:5}.paths .grid{display:grid;grid-template-columns:repeat(5,1fr);gap:16px}
 .path{background:#fff;border-radius:16px;padding:22px 18px;box-shadow:0 10px 30px rgba(11,46,79,.15);text-decoration:none;color:var(--ink);border-top:5px solid var(--lime);transition:transform .2s}.path:hover{transform:translateY(-4px)}
 .path b{display:inline-grid;place-items:center;width:38px;height:38px;border-radius:50%;background:var(--blue);color:#fff;margin-bottom:10px}.path h3{font-size:1.05rem}.path p{margin:0;font-size:.92rem;color:#3d5268}
 .prog{display:grid;grid-template-columns:1fr 2.1fr;gap:30px}.cats{background:var(--tint);border-radius:16px;padding:26px;align-self:start}.cats ul{list-style:none;padding:0;margin:0 0 20px}.cats li a{display:block;padding:10px 0;border-bottom:1px solid #d3e0ee;color:var(--navy);text-decoration:none;font-weight:600}
@@ -97,6 +137,55 @@ nav{position:absolute;left:0;right:0;top:76px;background:#fff;box-shadow:0 10px 
     <div class="disc" data-field="hero.mascot"><img src="mascot_assets/pakpro-01-waving.png" width="350" height="500" loading="eager" alt=""></div>
   </div>
 </section>
+
+<section class="price-ticker" aria-label="Recycled material prices ticker" data-field="prices.ticker">
+  <div class="wrap wide">
+    <a class="btn btn-lime" href="#prices" data-field="prices.cta">View full price table</a>
+    <div class="ticker" data-field="prices.ticker.track">
+      <div class="ticker-viewport"><div class="ticker-track" id="price-ticker-track" data-field="prices.ticker.items"></div></div>
+      <button class="ticker-toggle" type="button" data-field="prices.ticker.pause" aria-label="Pause price ticker" aria-pressed="false"><svg class="ticker-icon ticker-icon--pause" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true" focusable="false"><rect x="2" y="1.5" width="2.4" height="9" fill="currentColor"/><rect x="7.6" y="1.5" width="2.4" height="9" fill="currentColor"/></svg><svg class="ticker-icon ticker-icon--play" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true" focusable="false"><polygon points="3,1.5 10.5,6 3,10.5" fill="currentColor"/></svg></button>
+    </div>
+  </div>
+</section>
+
+<section id="prices" data-field="prices"><div class="wrap">
+  <div class="prices-head">
+    <h2 data-field="prices.heading">Recycled material prices</h2>
+    <p class="prices-sub" data-field="prices.unit">Prices in KES per kg</p>
+  </div>
+  <p class="price-updated"><span class="todo" data-field="prices.lastUpdated">Last updated: date to be confirmed</span></p>
+  <div class="price-search">
+    <label for="price-filter">Filter by material name</label>
+    <input type="search" id="price-filter" data-field="prices.search" placeholder="e.g. PET, glass, paper&hellip;" autocomplete="off">
+  </div>
+  <div class="prices-table-wrap" data-field="prices.table">
+    <table class="prices">
+      <caption>Recycled material prices &mdash; supported buying prices in Kenyan shillings per kilogram</caption>
+      <thead>
+        <tr><th scope="col">Material</th><th scope="col">Recycler (KES/kg)</th><th scope="col">Aggregator (KES/kg)</th></tr>
+      </thead>
+      <tbody id="prices-body">
+        <tr><td data-label="Material">PET / Quincha</td><td data-label="Recycler (KES/kg)">KES 18-23</td><td data-label="Aggregator (KES/kg)">KES 10-23</td></tr>
+        <tr><td data-label="Material">Coloured PET</td><td data-label="Recycler (KES/kg)">KES 10</td><td data-label="Aggregator (KES/kg)">KES 10</td></tr>
+        <tr><td data-label="Material">UBC (used beverage cartons) / Tetra Pak cartons</td><td data-label="Recycler (KES/kg)">KES 8</td><td data-label="Aggregator (KES/kg)">KES 4-5</td></tr>
+        <tr><td data-label="Material">PP thermoform</td><td data-label="Recycler (KES/kg)">KES 35-45</td><td data-label="Aggregator (KES/kg)">KES 34-44</td></tr>
+        <tr><td data-label="Material">Laminates</td><td data-label="Recycler (KES/kg)">KES 10</td><td data-label="Aggregator (KES/kg)">KES 8</td></tr>
+        <tr><td data-label="Material">Sugar pouches</td><td data-label="Recycler (KES/kg)">KES 11-16</td><td data-label="Aggregator (KES/kg)">KES 10-15</td></tr>
+        <tr><td data-label="Material">PET strapping (closed loop)</td><td data-label="Recycler (KES/kg)">To be confirmed</td><td data-label="Aggregator (KES/kg)">To be confirmed</td></tr>
+        <tr><td data-label="Material">Paper and corrugates</td><td data-label="Recycler (KES/kg)">KES 20-30</td><td data-label="Aggregator (KES/kg)">KES 5-20</td></tr>
+        <tr><td data-label="Material">Glass</td><td data-label="Recycler (KES/kg)">KES 3-5</td><td data-label="Aggregator (KES/kg)">KES 2</td></tr>
+        <tr><td data-label="Material">Gunias</td><td data-label="Recycler (KES/kg)">KES 12-20</td><td data-label="Aggregator (KES/kg)">KES 11-19</td></tr>
+        <tr><td data-label="Material">Hard plastic (HDPE/PP/LDPE rigid)</td><td data-label="Recycler (KES/kg)">KES 22-40</td><td data-label="Aggregator (KES/kg)">KES 22-35</td></tr>
+        <tr><td data-label="Material">Monolayer flexibles</td><td data-label="Recycler (KES/kg)">KES 19-34</td><td data-label="Aggregator (KES/kg)">KES 18-33</td></tr>
+        <tr><td data-label="Material">Milk pouches</td><td data-label="Recycler (KES/kg)">KES 19-34</td><td data-label="Aggregator (KES/kg)">KES 18-33</td></tr>
+        <tr><td data-label="Material">Bread / tissue bags</td><td data-label="Recycler (KES/kg)">KES 16-22</td><td data-label="Aggregator (KES/kg)">KES 15-21</td></tr>
+        <tr><td data-label="Material">Polystyrene</td><td data-label="Recycler (KES/kg)">KES 11-16</td><td data-label="Aggregator (KES/kg)">KES 10-15</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="no-results" id="price-no-results" hidden>No materials match your search.</p>
+  <p class="prices-footnote" data-field="prices.footnote">Supported buying prices. Prices vary by location, quality and quantity.</p>
+</div></section>
 
 <section class="paths" id="epr"><div class="wrap"><div class="grid" data-field="paths">
   <a class="path" href="#about"><b>1</b><h3>I'm a producer</h3><p>Find out whether EPR applies to you and how to comply.</p></a>
@@ -379,6 +468,81 @@ initializeEvents();
     if(track)track.classList.toggle("paused",p);
   }
   btn.addEventListener("click",function(){setPaused(!paused)});
+})();
+/*
+  PRICES DATA — single source for the ticker and the table below.
+  fetch() needs a local server (XAMPP Apache: http://localhost/pakpro-website/,
+  or `python -m http.server`). Opening index.html via file:// fails the fetch;
+  the hard-coded static fallback <table> in #prices covers file:// and any fetch
+  error, so the page still shows prices + the amber "Last updated: date to be
+  confirmed" badge without JS/JSON.
+
+  OPEN DATA QUESTIONS (resolve with the client):
+  - PET strapping (closed loop) prices are missing (recycler/aggregator null).
+  - Milk pouches values are identical to Monolayer flexibles — needs confirming.
+  - "Quincha" and "Gunias" wording to confirm.
+  - Last-updated date needed (lastUpdated currently null).
+*/
+(function(){
+  var track=document.getElementById("price-ticker-track");
+  var tbody=document.getElementById("prices-body");
+  var badge=document.querySelector('[data-field="prices.lastUpdated"]');
+  var filter=document.getElementById("price-filter");
+  var noResults=document.getElementById("price-no-results");
+  if(!track||!tbody)return;
+
+  function priceCell(v){if(v==null)return "To be confirmed";return v[0]===v[1]?"KES "+v[0]:"KES "+v[0]+"-"+v[1];}
+  function seg(label,v){if(v==null)return label+" To be confirmed";return label+" "+priceCell(v)+"/kg";}
+  function esc(s){return String(s).replace(/[&<>"']/g,function(c){return{"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c];});}
+
+  function applyFilter(){
+    if(!filter)return;
+    var q=filter.value.trim().toLowerCase();
+    var rows=tbody.querySelectorAll("tr");
+    var any=false;
+    rows.forEach(function(r){
+      var m=r.cells[0].textContent.toLowerCase();
+      var show=!q||m.indexOf(q)!==-1;
+      r.style.display=show?"":"none";
+      if(show)any=true;
+    });
+    if(noResults)noResults.hidden=any;
+  }
+
+  function render(data){
+    var items=data&&data.items?data.items:[];
+    // Ticker: items joined by lime dots, track duplicated for a seamless loop (dup aria-hidden)
+    var itemHtml=items.map(function(it){
+      return '<span class="ticker-item">'+esc(it.material)+': '+seg("Recycler",it.recycler)+' | '+seg("Aggregator",it.aggregator)+'</span>';
+    }).join('<span class="ticker-dot" aria-hidden="true">&bull;</span>');
+    var group='<span class="ticker-group">'+itemHtml+'<span class="ticker-dot" aria-hidden="true">&bull;</span></span>';
+    track.innerHTML=group+'<span class="ticker-group" aria-hidden="true">'+itemHtml+'<span class="ticker-dot" aria-hidden="true">&bull;</span></span>';
+    // Table rows
+    tbody.innerHTML=items.map(function(it){
+      return '<tr><td data-label="Material">'+esc(it.material)+'</td><td data-label="Recycler (KES/kg)">'+priceCell(it.recycler)+'</td><td data-label="Aggregator (KES/kg)">'+priceCell(it.aggregator)+'</td></tr>';
+    }).join("");
+    // Last-updated badge (null stays "date to be confirmed")
+    if(badge){
+      if(data&&data.lastUpdated){badge.textContent="Last updated: "+data.lastUpdated;badge.classList.remove("todo");}
+      else{badge.textContent="Last updated: date to be confirmed";}
+    }
+    applyFilter();
+  }
+
+  if(filter)filter.addEventListener("input",applyFilter);
+
+  fetch("assets/data/prices.json",{cache:"no-cache"})
+    .then(function(r){if(!r.ok)throw new Error("HTTP "+r.status);return r.json();})
+    .then(render)
+    .catch(function(){/* static fallback table already in the HTML */});
+
+  // Price ticker Pause/Play (WCAG 2.2.2). CSS pauses on :hover and :focus-within; reduced motion handled in CSS.
+  var btn=document.querySelector(".ticker-toggle");
+  if(btn){
+    var paused=false;
+    function setPaused(p){paused=p;btn.classList.toggle("is-paused",p);btn.setAttribute("aria-pressed",String(p));btn.setAttribute("aria-label",p?"Play price ticker":"Pause price ticker");if(track)track.classList.toggle("paused",p);}
+    btn.addEventListener("click",function(){setPaused(!paused);});
+  }
 })();
 </script>
 </body></html>
