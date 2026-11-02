@@ -15,6 +15,21 @@ h2{font-size:clamp(1.7rem,3vw,2.3rem)}h2.hd{text-align:center;margin-bottom:40px
 .btn{display:inline-block;padding:12px 24px;border-radius:999px;font-weight:700;text-decoration:none;border:2px solid transparent;cursor:pointer;font:inherit;font-weight:700}
 .btn-lime{background:var(--lime);color:var(--navy)}.btn-blue{background:var(--blue);color:#fff}.btn-line{border-color:#fff;color:#fff}.btn-navy{background:var(--navy);color:#fff}
 .topbar{background:var(--navy);color:#fff;font-size:.85rem;padding:6px 0}.topbar .wrap{display:flex;justify-content:space-between;gap:12px}.topbar a{color:var(--lime);text-decoration:none;font-weight:600}
+.marquee{display:flex;align-items:center;gap:8px;flex:1 1 auto;min-width:0;line-height:1.4}
+.marquee-viewport{overflow:hidden;flex:1 1 auto;min-width:0}
+.marquee-track{display:flex;white-space:nowrap;width:max-content;animation:marquee-scroll 30s linear infinite;will-change:transform}
+.marquee-group{display:inline-flex;align-items:center;white-space:nowrap;flex:0 0 auto}
+.marquee-item{flex:0 0 auto}
+.marquee-dot{flex:0 0 auto;color:var(--lime);margin:0 10px;font-weight:700}
+.marquee-toggle{flex:0 0 auto;display:inline-flex;align-items:center;justify-content:center;width:22px;height:18px;background:rgba(255,255,255,.14);color:#fff;border:0;border-radius:6px;cursor:pointer;padding:0;font:inherit}
+.marquee-toggle:hover{background:rgba(255,255,255,.26)}
+.marquee-icon--play{display:none}
+.marquee-toggle.is-paused .marquee-icon--pause{display:none}
+.marquee-toggle.is-paused .marquee-icon--play{display:inline}
+.marquee:hover .marquee-track,.marquee:focus-within .marquee-track{animation-play-state:paused}
+.marquee-track.paused{animation-play-state:paused}
+@keyframes marquee-scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@media(prefers-reduced-motion:reduce){.marquee-track{animation:none!important}.marquee-group+.marquee-group{display:none}.marquee-dot{display:none}.marquee-item~.marquee-item{display:none}.marquee-toggle{display:none}}
 header{position:sticky;top:0;z-index:50;background:#fff;box-shadow:0 2px 12px rgba(11,46,79,.12)}header .wrap{display:flex;align-items:center;justify-content:space-between;height:76px;gap:16px}
 .brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--navy);font-weight:800;font-size:1.25rem}.brand img{display:block;width:160px;height:auto;max-height:58px;object-fit:contain}
 nav ul{display:flex;gap:4px;list-style:none;margin:0;padding:0}nav a{display:block;white-space:nowrap;padding:10px 14px;color:var(--navy);font-weight:600;text-decoration:none;border-radius:8px;font-size:.95rem}nav a:hover{background:var(--tint)}
@@ -52,7 +67,13 @@ nav{position:absolute;left:0;right:0;top:76px;background:#fff;box-shadow:0 10px 
 </style></head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
-<div class="topbar dark"><div class="wrap wide"><span>Industry-led. Not-for-profit. Since 2018.</span><span><a href="https://epr.pakpro.co.ke">My PAKPRO login</a> &nbsp;|&nbsp; <a href="#">Kiswahili</a></span></div></div>
+<div class="topbar dark"><div class="wrap wide">
+  <div class="marquee" data-field="topbar.marquee">
+    <div class="marquee-viewport"><div class="marquee-track" data-field="topbar.marquee.track"><span class="marquee-group"><span class="marquee-item" data-field="topbar.marquee.item">Industry-led. Not-for-profit. Since 2018.</span><span class="marquee-dot" data-field="topbar.marquee.dot" aria-hidden="true">•</span><span class="marquee-item" data-field="topbar.marquee.item">500+ member companies</span><span class="marquee-dot" data-field="topbar.marquee.dot" aria-hidden="true">•</span><span class="marquee-item" data-field="topbar.marquee.item">KES 225M+ paid to aggregators and waste pickers</span><span class="marquee-dot" data-field="topbar.marquee.dot" aria-hidden="true">•</span><span class="marquee-item" data-field="topbar.marquee.item">Your PRO of Choice!</span><span class="marquee-dot" data-field="topbar.marquee.dot" aria-hidden="true">•</span></span><span class="marquee-group" aria-hidden="true"><span class="marquee-item" data-field="topbar.marquee.item">Industry-led. Not-for-profit. Since 2018.</span><span class="marquee-dot" data-field="topbar.marquee.dot" aria-hidden="true">•</span><span class="marquee-item" data-field="topbar.marquee.item">500+ member companies</span><span class="marquee-dot" data-field="topbar.marquee.dot" aria-hidden="true">•</span><span class="marquee-item" data-field="topbar.marquee.item">KES 225M+ paid to aggregators and waste pickers</span><span class="marquee-dot" data-field="topbar.marquee.dot" aria-hidden="true">•</span><span class="marquee-item" data-field="topbar.marquee.item">Your PRO of Choice!</span><span class="marquee-dot" data-field="topbar.marquee.dot" aria-hidden="true">•</span></span></div></div>
+    <button class="marquee-toggle" type="button" data-field="topbar.marquee.pause" aria-label="Pause marquee" aria-pressed="false"><svg class="marquee-icon marquee-icon--pause" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true" focusable="false"><rect x="2" y="1.5" width="2.4" height="9" fill="currentColor"/><rect x="7.6" y="1.5" width="2.4" height="9" fill="currentColor"/></svg><svg class="marquee-icon marquee-icon--play" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true" focusable="false"><polygon points="3,1.5 10.5,6 3,10.5" fill="currentColor"/></svg></button>
+  </div>
+  <span><a href="https://epr.pakpro.co.ke">My PAKPRO login</a> &nbsp;|&nbsp; <a href="#">Kiswahili</a></span>
+</div></div>
 <header><div class="wrap wide">
   <a class="brand" href="#top" data-field="site.logo"><img src="logo/PAKPRO%20Logo_No%20background.png" width="800" height="320" loading="eager" alt="PAKPRO Packaging Producer Responsibility Organisation"></a>
   <nav id="nav" aria-label="Main"><ul>
@@ -344,5 +365,20 @@ initializeEvents();
   var io=new IntersectionObserver(function(es){es.forEach(function(e){if(!e.isIntersecting)return;io.unobserve(e.target);var el=e.target,to=+el.dataset.to,p=el.dataset.prefix||"",s=el.dataset.suffix||"",t0=performance.now();
    (function f(t){var k=Math.min(1,(t-t0)/1200);el.textContent=p+Math.round(to*k)+(k<1?"":s);if(k<1)requestAnimationFrame(f)})(t0)})},{threshold:.5});
   document.querySelectorAll(".n[data-to]").forEach(function(x){if(x.dataset.to!="2018")io.observe(x)})}})();
+// Top-bar marquee: Pause/Play toggles animation-play-state (WCAG 2.2.2). CSS pauses on :hover and :focus-within; reduced motion is handled in CSS (static first item, no animation, button hidden).
+(function(){
+  var btn=document.querySelector(".marquee-toggle");
+  if(!btn)return;
+  var track=document.querySelector(".marquee-track");
+  var paused=false;
+  function setPaused(p){
+    paused=p;
+    btn.classList.toggle("is-paused",p);
+    btn.setAttribute("aria-pressed",String(p));
+    btn.setAttribute("aria-label",p?"Play marquee":"Pause marquee");
+    if(track)track.classList.toggle("paused",p);
+  }
+  btn.addEventListener("click",function(){setPaused(!paused)});
+})();
 </script>
 </body></html>
