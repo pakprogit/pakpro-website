@@ -13,8 +13,8 @@ class DashboardNeedsAttentionWidget extends Widget
     protected static ?int $sort = 2;
     protected int | string | array $columnSpan = [
         'default' => 12,
-        'md' => 7,
-        'xl' => 8,
+        'lg'      => 5,
+        'xl'      => 5,
     ];
 
     public function getAttentionItemsProperty(): array

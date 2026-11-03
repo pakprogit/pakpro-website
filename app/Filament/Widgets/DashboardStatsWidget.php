@@ -14,6 +14,8 @@ class DashboardStatsWidget extends BaseWidget
 {
     protected static ?int $sort = 1;
 
+    protected int | string | array $columnSpan = 'full';
+
     protected function getColumns(): int
     {
         return 4;
@@ -30,7 +32,7 @@ class DashboardStatsWidget extends BaseWidget
         $projectsCount = Highlight::whereDate('month', $monthStart)->where('type', 'projects')->where('status', 'published')->count();
         $bccCount = Highlight::whereDate('month', $monthStart)->where('type', 'bcc')->where('status', 'published')->count();
 
-        $formsWaiting = FormSubmission::where('is_read', false)->count();
+        $formsWaiting = FormSubmission::where('status', 'pending')->count();
         $activeUsers = User::where('is_active', true)->count();
 
         return [

@@ -10,8 +10,8 @@ class DashboardQuickActionsWidget extends Widget
     protected static ?int $sort = 3;
     protected int | string | array $columnSpan = [
         'default' => 12,
-        'md' => 5,
-        'xl' => 4,
+        'lg'      => 3,
+        'xl'      => 3,
     ];
 }
 
