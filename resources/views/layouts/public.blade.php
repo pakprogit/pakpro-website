@@ -84,7 +84,34 @@ nav ul{display:flex;gap:4px;list-style:none;margin:0;padding:0}nav a{display:blo
 .hero .wrap{position:relative;z-index:2;display:grid;grid-template-columns:1.3fr .7fr;gap:30px;align-items:center;padding-top:60px;padding-bottom:60px}.hero h1{color:#fff;font-size:clamp(2.2rem,4.4vw,3.7rem);text-wrap:balance}.hero h1 span{color:var(--lime)}
 .eyebrow{color:var(--lime);font-weight:700;letter-spacing:.12em;text-transform:uppercase;font-size:.85rem;margin-bottom:12px}.hero p{font-size:1.15rem;max-width:560px;margin:0 0 26px}.hero .btns{display:flex;gap:12px;flex-wrap:wrap}
 .shapes{position:absolute;inset:0;z-index:1;pointer-events:none;background:linear-gradient(112deg,transparent 56%,rgba(20,116,187,.6) 56%,rgba(20,116,187,.6) 80%,var(--lime) 80%,var(--lime) 84%,transparent 84%)}
-.rail{position:fixed;right:0;top:50%;transform:translateY(-50%);z-index:40;display:flex;flex-direction:column;background:var(--navy);border-radius:14px 0 0 14px;overflow:hidden;box-shadow:-4px 4px 16px rgba(0,0,0,.25)}.rail a{color:#fff;text-decoration:none;font-weight:700;font-size:.8rem;padding:16px 14px;text-align:center;border-bottom:1px solid rgba(255,255,255,.15)}.rail a:hover{background:var(--lime);color:var(--navy)}
+.rail{position:fixed;right:0;top:50%;transform:translateY(-50%);z-index:40;display:flex;flex-direction:column;background:var(--navy);border-radius:14px 0 0 14px;overflow:hidden;box-shadow:-4px 4px 16px rgba(0,0,0,.25)}.rail a,.rail button{color:#fff;text-decoration:none;font-weight:700;font-size:.8rem;padding:16px 14px;text-align:center;border-bottom:1px solid rgba(255,255,255,.15);display:block;width:100%;background:transparent;border-left:0;border-right:0;border-top:0;cursor:pointer;font-family:var(--font)}.rail a:hover,.rail button:hover{background:var(--lime);color:var(--navy)}
+
+/* Prices Modal */
+.prices-modal-overlay{position:fixed;inset:0;z-index:200;background:rgba(11,46,79,.72);backdrop-filter:blur(3px);display:flex;align-items:center;justify-content:center;padding:20px;opacity:0;pointer-events:none;transition:opacity .25s}
+.prices-modal-overlay.open{opacity:1;pointer-events:all}
+.prices-modal{background:#fff;border-radius:20px;width:100%;max-width:780px;max-height:90vh;display:flex;flex-direction:column;box-shadow:0 24px 60px rgba(11,46,79,.28);transform:translateY(20px);transition:transform .25s}
+.prices-modal-overlay.open .prices-modal{transform:translateY(0)}
+.prices-modal-head{display:flex;align-items:flex-start;justify-content:space-between;padding:24px 28px 16px;border-bottom:2px solid #e2eaf3;flex-shrink:0}
+.prices-modal-head h2{margin:0;font-size:1.55rem;color:var(--navy)}
+.prices-modal-head p{margin:4px 0 0;font-size:.9rem;color:#5b7189}
+.prices-modal-close{background:transparent;border:2px solid #c3d3e4;color:var(--navy);border-radius:50%;width:38px;height:38px;font-size:1.3rem;cursor:pointer;display:grid;place-items:center;flex-shrink:0;transition:background .15s,color .15s}
+.prices-modal-close:hover{background:var(--navy);color:#fff;border-color:var(--navy)}
+.prices-modal-search{padding:16px 28px 12px;flex-shrink:0}
+.prices-modal-search label{display:block;font-weight:600;font-size:.88rem;color:var(--navy);margin-bottom:5px}
+.prices-modal-search input{width:100%;padding:11px 14px;border:2px solid #c3d3e4;border-radius:10px;font:inherit;font-size:.95rem}
+.prices-modal-search input:focus{border-color:var(--blue);outline:none;box-shadow:0 0 0 3px rgba(20,116,187,.18)}
+.prices-modal-body{overflow-y:auto;padding:0 28px 24px;flex:1 1 auto}
+.prices-modal-meta{font-size:.85rem;color:#5b7189;margin:0 0 14px}
+.prices-modal-no-results{text-align:center;padding:28px;color:#5b7189;font-size:.97rem}
+.prices-modal table{width:100%;border-collapse:collapse;font-size:.95rem}
+.prices-modal table thead th{background:#eaf1f8;color:var(--navy);font-weight:700;font-size:.86rem;padding:11px 14px;text-align:left;white-space:nowrap;border-bottom:2px solid #d3e0ee;position:sticky;top:0;z-index:1}
+.prices-modal table tbody td{padding:11px 14px;border-bottom:1px solid #e2eaf3;text-align:left}
+.prices-modal table tbody tr:last-child td{border-bottom:0}
+.prices-modal table tbody td:first-child{font-weight:600;color:var(--navy)}
+.prices-modal table tbody tr:hover{background:#f4f8fc}
+.prices-modal-foot{padding:14px 28px 20px;border-top:2px solid #e2eaf3;flex-shrink:0;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px}
+.prices-modal-foot p{margin:0;font-size:.84rem;color:#5b7189}
+@media(max-width:600px){.prices-modal-head,.prices-modal-search,.prices-modal-body,.prices-modal-foot{padding-left:18px;padding-right:18px}.prices-modal table thead{display:none}.prices-modal table tbody tr{display:block;margin-bottom:12px;border:1px solid #e2eaf3;border-radius:10px;padding:12px 14px}.prices-modal table tbody td{display:block;border:0;padding:4px 0}.prices-modal table tbody td:first-child{font-size:1.02rem;padding-bottom:6px;border-bottom:1px solid #eef4fa;margin-bottom:4px}.prices-modal table tbody td:not(:first-child):before{content:attr(data-label) ": ";font-weight:700;color:var(--navy)}}
 .disc{position:relative;width:min(380px,80vw);aspect-ratio:1;margin:auto;border-radius:50%;background:#fff;box-shadow:0 0 0 12px var(--lime);display:grid;place-items:center;overflow:hidden}.disc img{display:block;width:100%;height:100%;object-fit:contain;margin:0}
 .paths{padding:0;margin-top:0;position:relative;z-index:5}.paths .grid{display:grid;grid-template-columns:repeat(5,1fr);gap:16px}
 .path{background:#fff;border-radius:16px;padding:22px 18px;box-shadow:0 10px 30px rgba(11,46,79,.15);text-decoration:none;color:var(--ink);border-top:5px solid var(--lime);transition:transform .2s}.path:hover{transform:translateY(-4px)}
@@ -203,10 +230,59 @@ nav{position:absolute;left:0;right:0;top:76px;background:#fff;box-shadow:0 10px 
 
 <aside class="rail" aria-label="Quick actions">
   <a href="https://epr.pakpro.co.ke">Join</a>
-  <a href="#prices" data-field="rail.prices">Prices</a>
+  <button type="button" id="rail-prices-btn" data-field="rail.prices" aria-haspopup="dialog" aria-controls="prices-modal">Prices</button>
   <a href="#highlights">Highlights</a>
   <a href="#contact">Chat</a>
 </aside>
+
+<!-- Prices Modal -->
+<div class="prices-modal-overlay" id="prices-modal" role="dialog" aria-modal="true" aria-labelledby="prices-modal-title" hidden>
+  <div class="prices-modal">
+    <div class="prices-modal-head">
+      <div>
+        <h2 id="prices-modal-title">Recycled material prices</h2>
+        <p>Supported buying prices in Kenyan shillings per kilogram</p>
+      </div>
+      <button class="prices-modal-close" type="button" id="prices-modal-close" aria-label="Close prices">✕</button>
+    </div>
+    <div class="prices-modal-search">
+      <label for="prices-modal-filter">Filter by material name</label>
+      <input type="search" id="prices-modal-filter" placeholder="e.g. PET, glass, paper…" autocomplete="off">
+    </div>
+    <div class="prices-modal-body">
+      <p class="prices-modal-meta" id="prices-modal-meta">
+        @if(isset($lastUpdated) && $lastUpdated)
+          Last updated: {{ $lastUpdated }}
+        @else
+          Prices updated regularly
+        @endif
+      </p>
+      <table aria-label="Recycled material prices">
+        <thead>
+          <tr>
+            <th scope="col">Material</th>
+            <th scope="col">Recycler (KES/kg)</th>
+            <th scope="col">Aggregator (KES/kg)</th>
+          </tr>
+        </thead>
+        <tbody id="prices-modal-body">
+          @foreach($prices as $price)
+            <tr>
+              <td data-label="Material">{{ $price->material }}</td>
+              <td data-label="Recycler (KES/kg)">{{ $price->recycler_formatted }}</td>
+              <td data-label="Aggregator (KES/kg)">{{ $price->aggregator_formatted }}</td>
+            </tr>
+          @endforeach
+        </tbody>
+      </table>
+      <p class="prices-modal-no-results" id="prices-modal-no-results" hidden>No materials match your search.</p>
+    </div>
+    <div class="prices-modal-foot">
+      <p>Prices vary by location, quality and quantity.</p>
+      <a class="btn btn-blue" href="#prices" id="prices-modal-full-link">View full price table ↓</a>
+    </div>
+  </div>
+</div>
 
 <script>
 // Hero video: skip on small screens, data-saver and reduced motion. Poster/gradient shows instead.
@@ -354,6 +430,112 @@ nav{position:absolute;left:0;right:0;top:76px;background:#fff;box-shadow:0 10px 
       video.style.objectFit = 'cover';
       mediaContainer.replaceChildren(video);
     });
+  });
+})();
+
+// Prices Modal
+(function(){
+  var overlay = document.getElementById('prices-modal');
+  var openBtn = document.getElementById('rail-prices-btn');
+  var closeBtn = document.getElementById('prices-modal-close');
+  var filter = document.getElementById('prices-modal-filter');
+  var tbody = document.getElementById('prices-modal-body');
+  var noResults = document.getElementById('prices-modal-no-results');
+  var fullLink = document.getElementById('prices-modal-full-link');
+  if(!overlay) return;
+
+  // Keep track of element focused before modal opened
+  var lastFocus = null;
+
+  function openModal(){
+    lastFocus = document.activeElement;
+    overlay.removeAttribute('hidden');
+    // Force reflow so transition plays
+    overlay.offsetHeight;
+    overlay.classList.add('open');
+    if(closeBtn) closeBtn.focus();
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeModal(){
+    overlay.classList.remove('open');
+    overlay.addEventListener('transitionend', function done(){
+      overlay.setAttribute('hidden', '');
+      overlay.removeEventListener('transitionend', done);
+    });
+    document.body.style.overflow = '';
+    if(lastFocus) lastFocus.focus();
+    // Reset search
+    if(filter) filter.value = '';
+    resetRows();
+  }
+
+  function resetRows(){
+    if(!tbody) return;
+    tbody.querySelectorAll('tr').forEach(function(r){ r.style.display = ''; });
+    if(noResults) noResults.hidden = true;
+  }
+
+  // All buttons/links that open the modal
+  [
+    document.getElementById('rail-prices-btn'),
+    document.getElementById('ticker-prices-btn'),
+    document.getElementById('nav-prices-btn'),
+    document.getElementById('band-prices-btn'),
+  ].forEach(function(btn){
+    if(!btn) return;
+    btn.addEventListener('click', function(e){ e.preventDefault(); openModal(); });
+  });
+
+  if(closeBtn) closeBtn.addEventListener('click', closeModal);
+
+  // Click outside modal content closes it
+  overlay.addEventListener('click', function(e){
+    if(e.target === overlay) closeModal();
+  });
+
+  // Escape key closes it
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape' && overlay.classList.contains('open')) closeModal();
+  });
+
+  // Filter rows
+  if(filter && tbody){
+    filter.addEventListener('input', function(){
+      var q = filter.value.trim().toLowerCase();
+      var rows = tbody.querySelectorAll('tr');
+      var any = false;
+      rows.forEach(function(r){
+        var m = r.cells[0] ? r.cells[0].textContent.toLowerCase() : '';
+        var show = !q || m.indexOf(q) !== -1;
+        r.style.display = show ? '' : 'none';
+        if(show) any = true;
+      });
+      if(noResults) noResults.hidden = any;
+    });
+  }
+
+  // Footer close link
+  if(fullLink){
+    fullLink.addEventListener('click', function(e){
+      e.preventDefault();
+      closeModal();
+    });
+  }
+
+  // Trap focus inside modal
+  overlay.addEventListener('keydown', function(e){
+    if(e.key !== 'Tab') return;
+    var focusable = Array.from(overlay.querySelectorAll(
+      'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
+    )).filter(function(el){ return !el.disabled && el.offsetParent !== null; });
+    if(!focusable.length) return;
+    var first = focusable[0], last = focusable[focusable.length - 1];
+    if(e.shiftKey){
+      if(document.activeElement === first){ e.preventDefault(); last.focus(); }
+    } else {
+      if(document.activeElement === last){ e.preventDefault(); first.focus(); }
+    }
   });
 })();
 </script>

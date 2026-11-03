@@ -1,0 +1,21 @@
+{
+  "lastUpdated": null,
+  "unit": "KES per kg",
+  "items": [
+    {"material":"PET / Quincha","recycler":[18,23],"aggregator":[10,23]},
+    {"material":"Coloured PET","recycler":[10,10],"aggregator":[10,10]},
+    {"material":"UBC (used beverage cartons) / Tetra Pak cartons","recycler":[8,8],"aggregator":[4,5]},
+    {"material":"PP thermoform","recycler":[35,45],"aggregator":[34,44]},
+    {"material":"Laminates","recycler":[10,10],"aggregator":[8,8]},
+    {"material":"Sugar pouches","recycler":[11,16],"aggregator":[10,15]},
+    {"material":"PET strapping (closed loop)","recycler":null,"aggregator":null},
+    {"material":"Paper and corrugates","recycler":[20,30],"aggregator":[5,20]},
+    {"material":"Glass","recycler":[3,5],"aggregator":[2,2]},
+    {"material":"Gunias","recycler":[12,20],"aggregator":[11,19]},
+    {"material":"Hard plastic (HDPE/PP/LDPE rigid)","recycler":[22,40],"aggregator":[22,35]},
+    {"material":"Monolayer flexibles","recycler":[19,34],"aggregator":[18,33]},
+    {"material":"Milk pouches","recycler":[19,34],"aggregator":[18,33]},
+    {"material":"Bread / tissue bags","recycler":[16,22],"aggregator":[15,21]},
+    {"material":"Polystyrene","recycler":[11,16],"aggregator":[10,15]}
+  ]
+}

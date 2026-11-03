@@ -28,7 +28,7 @@
 <!-- Price Ticker -->
 <section class="price-ticker" aria-label="Recycled material prices ticker" data-field="prices.ticker">
   <div class="wrap wide">
-    <a class="btn btn-lime" href="#prices" data-field="prices.cta">View full price table</a>
+    <button type="button" class="btn btn-lime" id="ticker-prices-btn" data-field="prices.cta">View price table</button>
     <div class="ticker" data-field="prices.ticker.track">
       <div class="ticker-viewport">
         <div class="ticker-track" id="price-ticker-track" data-field="prices.ticker.items">
@@ -58,47 +58,7 @@
   </div>
 </section>
 
-<!-- Prices Table Section -->
-<section id="prices" data-field="prices"><div class="wrap">
-  <div class="prices-head">
-    <h2 data-field="prices.heading">Recycled material prices</h2>
-    <p class="prices-sub" data-field="prices.unit">Prices in KES per kg</p>
-  </div>
-  <p class="price-updated">
-    @if($lastUpdated)
-      <span data-field="prices.lastUpdated">Last updated: {{ $lastUpdated }}</span>
-    @else
-      <span class="todo" data-field="prices.lastUpdated">Last updated: date to be confirmed</span>
-    @endif
-  </p>
-  <div class="price-search">
-    <label for="price-filter">Filter by material name</label>
-    <input type="search" id="price-filter" data-field="prices.search" placeholder="e.g. PET, glass, paper…" autocomplete="off">
-  </div>
-  <div class="prices-table-wrap" data-field="prices.table">
-    <table class="prices">
-      <caption>Recycled material prices — supported buying prices in Kenyan shillings per kilogram</caption>
-      <thead>
-        <tr>
-          <th scope="col">Material</th>
-          <th scope="col">Recycler (KES/kg)</th>
-          <th scope="col">Aggregator (KES/kg)</th>
-        </tr>
-      </thead>
-      <tbody id="prices-body">
-        @foreach($prices as $price)
-          <tr>
-            <td data-label="Material">{{ $price->material }}</td>
-            <td data-label="Recycler (KES/kg)">{{ $price->recycler_formatted }}</td>
-            <td data-label="Aggregator (KES/kg)">{{ $price->aggregator_formatted }}</td>
-          </tr>
-        @endforeach
-      </tbody>
-    </table>
-  </div>
-  <p class="no-results" id="price-no-results" hidden>No materials match your search.</p>
-  <p class="prices-footnote" data-field="prices.footnote">Supported buying prices. Prices vary by location, quality and quantity.</p>
-</div></section>
+
 
 <!-- Paths -->
 <section class="paths" id="epr"><div class="wrap"><div class="grid" data-field="paths">
