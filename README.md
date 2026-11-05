@@ -309,6 +309,72 @@ ALLOW_PLACEHOLDER_HIGHLIGHTS_ON_PUBLIC=false
 
 ---
 
+## Firebase Hosting + Cloud Run
+
+Firebase Hosting can deliver this app's public assets and route Laravel requests
+to Cloud Run. Cloud Run runs the PHP application using the included `Dockerfile`;
+Firebase Hosting by itself cannot run Laravel or PHP.
+
+This deployment requires a Google Cloud billing account and the Firebase **Blaze**
+plan to enable Cloud Run. Cloud Run and Firebase have free quotas, but usage beyond
+those quotas can be billed. The app also needs a persistent MySQL/MariaDB database:
+the repository's SQLite database is intentionally excluded from the container
+because Cloud Run's local filesystem is temporary. Admin media uploads also need
+persistent object storage before you rely on them in production.
+
+### Deploy
+
+1. Create or select a Firebase project, enable billing, and install the Firebase
+   CLI and Google Cloud CLI. Authenticate and select the same project in both:
+
+   ```powershell
+   firebase login
+   gcloud auth login
+   gcloud config set project YOUR_PROJECT_ID
+   firebase use --add
+   ```
+
+2. Prepare a persistent MySQL/MariaDB database and generate an application key
+   locally with:
+
+   ```powershell
+   php artisan key:generate --show
+   ```
+
+   Keep the database connection details and key ready for Cloud Run configuration.
+   Store `APP_KEY` and `DB_PASSWORD` as Secret Manager secrets; do not put
+   credentials in this repository. Do not run the development database seeder in
+   production; it creates sample administrator accounts.
+
+3. Deploy the Laravel container to the configured Cloud Run service and region:
+
+   ```powershell
+   gcloud run deploy pakpro-laravel --source . --region africa-south1 --port 8080 --allow-unauthenticated
+   ```
+
+   In Cloud Run, edit the service and set `APP_ENV=production`, `APP_DEBUG=false`,
+   `APP_URL=https://YOUR_PROJECT_ID.web.app`, `DB_CONNECTION=mysql`, the
+   provider's `DB_HOST`, `DB_PORT`, `DB_DATABASE`, and `DB_USERNAME`, plus
+   `SESSION_DRIVER=cookie`. Map `APP_KEY` and `DB_PASSWORD` from Secret Manager.
+   Run `php artisan migrate --force` once against the production database using
+   a controlled deployment task or Cloud Run Job; do not run migrations on every
+   web-container startup.
+
+4. Deploy Firebase Hosting:
+
+   ```powershell
+   firebase deploy --only hosting
+   ```
+
+The Firebase configuration serves files from `public/`, excludes Laravel's
+`index.php` and local `storage` link, and rewrites other requests to the
+`pakpro-laravel` Cloud Run service in `africa-south1`. Keep that service name and
+region in sync if you change them. Verify the public homepage, `/admin`, and
+contact form after deployment. Configure persistent object storage for uploaded
+media before enabling production uploads.
+
+---
+
 ## Git Workflow
 
 All admin work is on the `feature/website-admin` branch:
@@ -321,4 +387,3 @@ git push origin feature/website-admin
 ```
 
 Do **not** commit `.env` — it is in `.gitignore`.
-

@@ -333,7 +333,7 @@
   <aside class="info" data-field="contact.details">
     <h3>Contact us</h3>
     <h4>Phone</h4>
-    <p>{{ $contact['phone'] ?? '+254 700 000 000' }}</p>
+    <p>{{ $contact['phone'] ?? '+254 708 719615' }}</p>
     <h4>Email</h4>
     <p>{{ $contact['email'] ?? 'info@pakpro.co.ke' }}</p>
     <h4>Address</h4>

@@ -86,21 +86,25 @@ class AdminPanelProvider extends PanelProvider
                         background-color: var(--pakpro-bg) !important;
                         font-family: Inter, Aptos, "Segoe UI", sans-serif !important;
                     }
+
+                    /* ── Sidebar shell ── */
                     .fi-sidebar {
                         background-color: var(--pakpro-navy) !important;
                         border-right: none !important;
                     }
                     .fi-sidebar-header {
                         background-color: var(--pakpro-navy) !important;
-                        border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
+                        border-bottom: 1px solid rgba(255,255,255,0.08) !important;
                     }
+
+                    /* ── Nav items ── */
                     .fi-sidebar-item-btn {
                         color: #cbd5e1 !important;
                         border-radius: 0.5rem !important;
                         margin: 2px 8px !important;
                     }
                     .fi-sidebar-item-btn:hover {
-                        background-color: rgba(255, 255, 255, 0.08) !important;
+                        background-color: rgba(255,255,255,0.08) !important;
                         color: #ffffff !important;
                     }
                     .fi-sidebar-item-active .fi-sidebar-item-btn,
@@ -113,17 +117,69 @@ class AdminPanelProvider extends PanelProvider
                     .fi-sidebar-item-btn.fi-active .fi-sidebar-item-icon {
                         color: #ffffff !important;
                     }
-                    .fi-sidebar-group-label {
-                        color: #64748b !important;
+                    /* icons for non-active items */
+                    .fi-sidebar-item-icon {
+                        color: #94a3b8 !important;
+                    }
+                    .fi-sidebar-item-btn:hover .fi-sidebar-item-icon {
+                        color: #ffffff !important;
+                    }
+
+                    /* ── Group labels – white on dark sidebar ── */
+                    .fi-sidebar-group-label,
+                    .fi-sidebar-group > div > span,
+                    [class*="fi-sidebar-group"] span {
+                        color: rgba(255,255,255,0.45) !important;
                         text-transform: uppercase !important;
-                        font-size: 0.7rem !important;
-                        letter-spacing: 0.06em !important;
+                        font-size: 0.68rem !important;
+                        letter-spacing: 0.08em !important;
                         font-weight: 700 !important;
                         padding-left: 1rem !important;
                     }
+                    /* group collapse chevron */
+                    .fi-sidebar-group-collapse-button svg {
+                        color: rgba(255,255,255,0.4) !important;
+                    }
+
+                    /* ── Topbar ── */
                     .fi-topbar {
                         background-color: #ffffff !important;
                         border-bottom: 1px solid #e2e8f0 !important;
+                    }
+
+                    /* ── Dashboard widget cards ── */
+                    .fi-wi-stats-overview-stat,
+                    .fi-section {
+                        background: #ffffff !important;
+                        border: 1px solid #e2eaf3 !important;
+                        border-radius: 14px !important;
+                        box-shadow: 0 4px 16px rgba(11,46,79,0.07) !important;
+                        overflow: hidden !important;
+                    }
+                    /* section headings inside widgets */
+                    .fi-section-header {
+                        border-bottom: 1px solid #e9eff6 !important;
+                        padding: 14px 20px 12px !important;
+                        background: #f8fafc !important;
+                    }
+                    .fi-section-content {
+                        padding: 16px 20px 20px !important;
+                    }
+                    /* stats card numbers */
+                    .fi-wi-stats-overview-stat-value {
+                        color: var(--pakpro-navy) !important;
+                        font-weight: 800 !important;
+                        font-size: 2rem !important;
+                        line-height: 1.1 !important;
+                    }
+                    .fi-wi-stats-overview-stat-label {
+                        color: #5b7189 !important;
+                        font-weight: 600 !important;
+                        font-size: 0.82rem !important;
+                    }
+                    .fi-wi-stats-overview-stat-description {
+                        font-size: 0.8rem !important;
+                        color: #7a94ac !important;
                     }
                 </style>'
             )
